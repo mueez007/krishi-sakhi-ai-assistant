@@ -1,0 +1,7 @@
+venv/
+pycache/
+db.sqlite3
+*.sqlite3
+data/
+ml_models/
+.DS_Store
