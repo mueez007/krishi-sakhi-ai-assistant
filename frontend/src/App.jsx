@@ -299,17 +299,9 @@ function Dashboard({ username }) {
         setAssistantInput('');
         setIsLoadingAssistant(true);
         
-        const systemInstruction = "You are 'Krishi Sakhi,' an expert AI agronomist from the University of Agricultural Sciences, Bangalore. Your knowledge is strictly limited to agriculture, farming, horticulture, and related government schemes. You specialize in the crops, soil types, and climate of Karnataka, India. Your language must be simple, direct, and easy for a farmer to understand. Crucially, if a user asks a question outside of this agricultural domain (e.g., about politics, sports, movies, or general trivia), you must politely refuse to answer. You should state that your purpose is only to assist with farming-related queries.";
         try {
-            const apiKey = "";
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-            const payload = {
-                contents: [{ parts: [{ text: assistantInput }] }],
-                systemInstruction: { parts: [{ text: systemInstruction }] },
-            };
-            const response = await axios.post(apiUrl, payload);
-            const geminiResponse = response.data.candidates[0].content.parts[0].text;
-            setChatHistory([...newChatHistory, { role: 'model', text: geminiResponse }]);
+            const response = await axios.post('http://127.0.0.1:8000/api/assistant/', { message: assistantInput });
+            setChatHistory([...newChatHistory, { role: 'model', text: response.data.response }]);
         } catch (error) {
             setChatHistory([...newChatHistory, { role: 'model', text: "Sorry, I'm having trouble connecting to my knowledge base. Please try again." }]);
         } finally {
