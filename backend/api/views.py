@@ -263,7 +263,7 @@ class AIAssistantView(APIView):
         # Now call Gemini API
         try:
             # Get API key
-            api_key = 'AIzaSyDV0EJkSckGiCeB0ZdRvTE9yaN9cNwMKOE'
+            api_key = 'Your Api Here'
             
             # Use the available models from your test
             # These models are confirmed to exist with your API key
