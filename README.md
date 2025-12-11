@@ -120,17 +120,3 @@ Multi-Crop Doctor (multicrop_doctor_v2.h5): A Convolutional Neural Network (usin
 This project is licensed under the MIT License. See the LICENSE file for details.
 
 
-### **Step 3: Push Your New README to GitHub**
-
-Now that you've created the file, you just need to add it to your repository and push the update.
-
-1.  In your **master terminal** (the one in the `Krishi_Sakhi_V2` folder), run these three commands:
-    ```bash
-    # Add the new README.md file
-    git add README.md
-
-    # Save the change with a message
-    git commit -m "docs: Add detailed project README"
-
-    # Push the update to GitHub
-    git push
